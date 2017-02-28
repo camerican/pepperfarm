@@ -74,10 +74,10 @@ We now are going to try protecting one of our routes.  Let's build a users contr
 
 Now in our routes, let's just add in all the routes for user. We can do that with the shortcut: `resources :users`.
 
-![./dev/hot_shipped_manufacturer.png]()
+![](./dev/hot_shipped_manufacturer.png)
 
-![./dev/hot_shipped_pepper_farmer.png]()
+![](./dev/hot_shipped_pepper_farmer.png)
 
-![./dev/hot_shipped_shipper.png]()
+![](./dev/hot_shipped_shipper.png)
 
 
