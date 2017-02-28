@@ -66,6 +66,14 @@ We can add anything we want and add or remove configuration options from the mig
 Okay, we can now run our `rails db:migrate` to migrate the databse.
 
 
+----
+
+We now are going to try protecting one of our routes.  Let's build a users controller since devise was lazy and didn't bother doing that for us yet.
+
+`rails g controller users`
+
+Now in our routes, let's just add in all the routes for user. We can do that with the shortcut: `resources :users`.
+
 
 
 
