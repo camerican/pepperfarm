@@ -48,7 +48,7 @@ Then, let's get started with some devise views:
 
 We then attached devise to a user model.  It's always great to do this at the start of a project, otherwise it gets a little more messy when adding devise to an existing model.
 
-`rails g devise user`
+`rails g devise user name_first:string name_last:string username:string`
 
 The above created the user model and migration with devise settings.
 
@@ -74,6 +74,10 @@ We now are going to try protecting one of our routes.  Let's build a users contr
 
 Now in our routes, let's just add in all the routes for user. We can do that with the shortcut: `resources :users`.
 
+![./dev/hot_shipped_manufacturer.png]()
 
+![./dev/hot_shipped_pepper_farmer.png]()
+
+![./dev/hot_shipped_shipper.png]()
 
 
