@@ -74,9 +74,23 @@ We now are going to try protecting one of our routes.  Let's build a users contr
 
 Now in our routes, let's just add in all the routes for user. We can do that with the shortcut: `resources :users`.
 
-![](./dev/hot_shipped_manufacturer.png)
+# (Hot) Shipped Roles
+
+For our version of the Shipped project, we're taking on various roles within the Hot Sauce industry.  Two teams will work as Farmer's Collectives, growing crops that specialize in having a fiery taste.  Two teams will be Hot Sauce Manufacturers, who make delicious sauces from ingredients they can find in the marketplace.  We also have two teams that are shipping companies who will allow Farmers to ship their products to their customers.
+
+![](./dev/hot_shipped_ecosystem.png)
+
+Each of the roles work together and will focus on specific areas of interest to their business.
+
+## Farmer
 
 ![](./dev/hot_shipped_pepper_farmer.png)
+
+The farmer is responsible for taking care of produce that they grow in their facilities.  In the diagram above, the produce is labeled as being *Items*, but you can adjust this to match your own terms.
+
+![](./dev/hot_shipped_manufacturer.png)
+
+
 
 ![](./dev/hot_shipped_shipper.png)
 

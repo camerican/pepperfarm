@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <%= link_to "Sign In", new_user_session_path %>
+    <nav id="main_nav">
+      <ul>
+      <%= link_to new_user_session_path do 
+            content_tag :ul, "Sign In", class: :ber_class
+          end %>
+      </ul>
+    </nav>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
