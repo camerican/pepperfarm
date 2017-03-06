@@ -9,16 +9,21 @@
   </head>
 
   <body>
-    <%= link_to "Sign In", new_user_session_path %>
-    <nav id="main_nav">
-      <ul>
-      <%= link_to new_user_session_path do 
-            content_tag :ul, "Sign In", class: :ber_class
+    <header>
+      <nav>
+        <span class="title">Pepper<%= image_tag 'peppers.png', height: 40 %>Farm</span>
+        <ul class="login">
+          <%= content_tag :li do 
+            link_to 'Shop', :shop
           end %>
-      </ul>
-    </nav>
+          <%= render '/devise/menu/login_items' %>
+        </ul>
+      </nav>
+    </header>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

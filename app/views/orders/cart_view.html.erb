@@ -1,0 +1,6 @@
+	<h2>My Cart</h2>
+	<% @cart.each do |cart_item| %>
+	<div class="image">X</div>
+	<span class="name"><%= cart_item[:item].name %></span>
+	<input value="<%= cart_item[:quantity] %>" />
+	<% end %>

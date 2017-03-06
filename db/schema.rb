@@ -10,19 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228201928) do
+ActiveRecord::Schema.define(version: 20170303220825) do
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name",               limit: 128
+    t.text     "description"
+    t.decimal  "cost",                           precision: 8, scale: 2
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+  end
+
+  create_table "orderitems", id: false, force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_orderitems_on_item_id"
+    t.index ["order_id"], name: "index_orderitems_on_order_id"
+  end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "user_id"
-    t.text     "description"
-    t.integer  "pick_up"
-    t.integer  "drop_off"
-    t.decimal  "cost"
-    t.integer  "vehicle_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_orders_on_user_id"
-    t.index ["vehicle_id"], name: "index_orders_on_vehicle_id"
+    t.integer  "customer_id"
+    t.decimal  "cost",          precision: 8, scale: 2
+    t.integer  "shipper_id_id"
+    t.integer  "status"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.index ["shipper_id_id"], name: "index_orders_on_shipper_id_id"
+  end
+
+  create_table "shippers", force: :cascade do |t|
+    t.string   "name",       limit: 64
+    t.string   "url"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|

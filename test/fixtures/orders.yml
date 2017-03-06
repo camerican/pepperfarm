@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 1
+  cost: 9.99
+  shipper_id: one
+
+two:
+  customer_id: 1
+  cost: 9.99
+  shipper_id: two

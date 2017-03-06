@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+
+  <div id="items">
+  <% @items.each do |item| %>
+    <%= form_tag "/cart", id: "item_#{item.id}", class: "item" do %> 
+      <div class="image" /></div>
+      <div class="name"><%= item.name %></div>
+      <div class="cost"><%= item.cost %></div>
+      <input name="item" type="hidden" value="<%= item.id %>" />
+      <input type="submit" value="Add to Cart" />
+    <% end %>
+
+  <% end %>
+  </div>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>
