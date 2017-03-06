@@ -4,9 +4,9 @@
   <div id="items">
   <% @items.each do |item| %>
     <%= form_tag "/cart", id: "item_#{item.id}", class: "item" do %> 
-      <div class="image" /></div>
+      <%= image_tag item.image.url(:thumb) %>
       <div class="name"><%= item.name %></div>
-      <div class="cost"><%= item.cost %></div>
+      <div class="cost"><%= number_to_currency(item.cost,unit: '$') %></div>
       <input name="item" type="hidden" value="<%= item.id %>" />
       <input type="submit" value="Add to Cart" />
     <% end %>

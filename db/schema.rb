@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303220825) do
+ActiveRecord::Schema.define(version: 20170306025905) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name",               limit: 128
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20170303220825) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
+    t.integer  "quantity",                                               default: 0
+    t.datetime "created_at",                                                         null: false
+    t.datetime "updated_at",                                                         null: false
   end
 
   create_table "orderitems", id: false, force: :cascade do |t|
@@ -35,12 +36,11 @@ ActiveRecord::Schema.define(version: 20170303220825) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "customer_id"
-    t.decimal  "cost",          precision: 8, scale: 2
-    t.integer  "shipper_id_id"
+    t.decimal  "cost",        precision: 8, scale: 2
+    t.integer  "shipper_id"
     t.integer  "status"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.index ["shipper_id_id"], name: "index_orders_on_shipper_id_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "shippers", force: :cascade do |t|

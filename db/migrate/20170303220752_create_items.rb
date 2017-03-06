@@ -5,7 +5,8 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.text :description
       t.decimal :cost, precision: 8, scale: 2
       t.attachment :image
-      
+      t.integer :quantity, default: 0
+
       t.timestamps
     end
   end
